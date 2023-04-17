@@ -1,1 +1,1 @@
-export type ParamMatcher = RegExp | ((param: string) => boolean);
+export type StringMatcher = RegExp | ((param: string) => boolean);

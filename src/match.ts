@@ -1,11 +1,11 @@
 import { Handler, Handlers } from "./deps.ts";
-import { ParamMatcher } from "./types.ts";
+import { StringMatcher } from "./types.ts";
 import { mapObjectValues } from "./utils.ts";
 
 // deno-lint-ignore no-explicit-any
 export const matchParams = <T = any, State = Record<string, unknown>>(
   handlers: Handler<T, State> | Handlers<T, State>,
-  paramMatchers: Record<string, ParamMatcher>
+  paramMatchers: Record<string, StringMatcher>
 ): typeof handlers => {
   // turn `RegExp` matchers into `string` => `boolean` function matchers
   const matchers = mapObjectValues(paramMatchers, (pm) => {
