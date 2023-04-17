@@ -3,7 +3,7 @@ import { StringMatcher } from "./types.ts";
 import { mapObjectValues } from "./utils.ts";
 
 // deno-lint-ignore no-explicit-any
-export const matchParams = <T = any, State = Record<string, unknown>>(
+export const matchRouteParams = <T = any, State = Record<string, unknown>>(
   handlers: Handler<T, State> | Handlers<T, State>,
   paramMatchers: Record<string, StringMatcher>
 ): typeof handlers => {
